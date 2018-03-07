@@ -34,34 +34,27 @@ traceme.py [add|record|parse|list] OPTIONS
 
 
 
-1. Register probes
+##### Simple usage example
+
+1. Register functions to be traced.
 
   ```bash
   sudo traceme.py add -f BINARY -a
   ```
 
-2. Collect traces
-  sudo trace-cmd record -e "probe_*" EXECUTABLE
-
-3. Get report
-  trace-cmd report | vtrace_reg_funcs.py parse [-o OUTPUT.json]
-
-4. Open on chrome](http://vtrace_reg_funcs.py/) add -f BINARY [-l FUNC_LIST_FILE]
-
-5. Collect traces
+2. Collect traces via `trace-cmd`.
 
   ```bash
-  sudo trace-cmd record -e "probe_*" EXECUTABLE
+  sudo trace-cmd record -e "probe_*" BINARY
   ```
 
-6. Parse data into a format of report
+3. Parse data into a format of report.
 
   ```bash
   sudo trace-cmd report | vtrace_reg_funcs.py parse [-o OUTPUT.json]
   ```
 
-7. Open the report file on chrome browser
+4. Open the report file on chrome browser.
 
    * chrome://tracing
 
-chrome://tracing
