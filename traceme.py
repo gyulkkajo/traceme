@@ -23,7 +23,7 @@ def get_func_list(bin_path):
 
     try:
         raw_funcs = subprocess.check_output(['perf', 'probe', '-x', bin_path, '--funcs']).decode('utf-8')
-    except CalledProcessError as e:
+    except subprocess.CalledProcessError as e:
         print('Error while perf : %s' % e)
         return None
 
